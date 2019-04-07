@@ -1,0 +1,132 @@
+.navbar{
+    background-color: #e77e23!important;
+    /*height: 0.5rem;*/
+    /*padding: 0;*/
+}
+
+.navbar-dark {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-dark a {
+    color: white!important;
+    font-size: 0.9rem;
+}
+
+.navbar-nav li {
+    padding-right: .7rem;
+}
+
+.primary-navbar {
+    background-color: black!important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-toggler-icon {
+    font-size: 0.8rem;
+}
+
+.secondary-navbar a {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.4rem;
+    font-wight: bold;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.row, .container-fluid {
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+    padding: 0;
+}
+
+.playerNameBar {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    background-color: white;
+    color: black;
+}
+
+.playerName {
+    font-size: 1.8rem;
+}
+
+.bottom-half {
+    margin-top: 1.5rem;
+}
+
+.full-container {
+    /*padding-left: 20rem;*/
+    /*padding-right: 20rem;*/
+}
+
+.match-list-col {
+    padding-left: 0;
+    padding-right: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.match-list-container {
+    /*background-color: white;*/
+}
+
+.game-mode-info-col {
+    padding-left: 0.25rem;
+    padding-right: 0;
+}
+
+.game-mode-info-container {
+    /*background-color: green;*/
+    padding: 0;
+}
+
+/* Media Queries*/
+@media(max-width: 768px) {
+    .playerNameBar {
+        margin-top: 0;
+    }
+
+    .bottom-half {
+        margin-top: 0;
+    }
+
+    .match-list-col {
+        padding-right: 0;
+    }
+
+    .game-mode-info-col {
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 1500px) {
+    .full-container {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+
+    .playerContainer {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}
+
+@media (min-width: 1700px) {
+    .full-container {
+        padding-left: 25rem;
+        padding-right: 25rem;
+    }
+
+    .playerContainer {
+        padding-left: 25rem;
+        padding-right: 25rem;
+    }
+}

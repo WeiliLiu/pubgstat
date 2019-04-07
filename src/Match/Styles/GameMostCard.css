@@ -1,0 +1,28 @@
+.game-most-card {
+    /*border-radius: 0.5rem;*/
+}
+
+.game-most-card-title {
+    padding-left: 1.5rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    background-color: #e77e23;
+    /*border-top-right-radius: 0.5rem;*/
+    /*border-top-left-radius: 0.5rem;*/
+    color: white;
+}
+
+.game-most-card-body {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.game-most-card-body h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.game-most-card-body h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}

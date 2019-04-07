@@ -1,0 +1,84 @@
+.card {
+    /*background-color: red;*/
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    padding: 0.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+.card-title-text {
+    margin: 0;
+    padding: 0;
+}
+
+.toggler {
+    margin-bottom: -1rem;
+    padding-left: 2rem;
+}
+
+.toggler label {
+    float: right;
+}
+
+.toggler-label {
+    padding: 0 0.5rem 0 0;
+}
+
+.game-mode-card-body {
+    padding: 0;
+}
+
+.win-loss {
+    /*background-color: red;*/
+    margin: 0;
+    padding-top: 1.3rem;
+    padding-bottom: 0.8rem;
+}
+
+.win-loss h6 {
+    margin: 0;
+    color: gray;
+    font-weight: bold;
+}
+
+.win-loss p {
+    margin: 0;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.info-batch {
+    margin: 0;
+    border-top: solid 1px;
+    border-color: #ededed;
+}
+
+.info-title {
+    padding: 0;
+    color: gray;
+    font-size: 0.8rem;
+    line-height: 1.6rem;
+}
+
+.info-container-left{
+    margin: 0;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    border-right: solid 1px;
+    border-color: #ededed;
+}
+
+.info-container-right{
+    margin: 0;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.info-value {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+}

@@ -1,0 +1,17 @@
+.list-row {
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+    border-bottom: solid 1px;
+    margin: 0;
+    border-color: #ededed;
+}
+
+.team-rank, .total-kill, .total-damage {
+    /*background-color: red;*/
+    text-align: center;
+    line-height: 4.5rem;
+}
+
+.player-name {
+    font-size: 0.8rem;
+}

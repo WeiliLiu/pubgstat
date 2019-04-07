@@ -1,0 +1,92 @@
+.match-overview {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    background-color: white;
+    color: black;
+}
+
+.match-info-row {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.match-overview-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: gray;
+}
+
+.match-overview-value {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.most-cards {
+    margin-top: 1rem;
+    padding: 0;
+}
+
+.roster-list-container {
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.roster-list-container {
+    background-color: white;
+}
+
+.list-title-row {
+    background-color: #3598dc;
+    /*background-color: red;*/
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    /*padding: 1.5rem 1rem 1.5rem 1rem!important;*/
+}
+
+.rank-title-box {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.rank-title-box:hover {
+    cursor: pointer;
+    background-color: #34495e;
+}
+
+.member-title {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+
+@media (max-width: 992px) {
+    .match-overview {
+        margin-top: 0;
+    }
+
+    .match-info-row {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media(max-width: 576px) {
+    .member-title{
+        display:none;
+    }
+}
+
+@media (min-width: 1500px) {
+    .match-overview-container {
+        padding-left: 10rem!important;
+        padding-right: 10rem!important;
+    }
+}
+
+@media (min-width: 1700px) {
+    .match-overview-container {
+        padding-left: 25rem!important;
+        padding-right: 25rem!important;
+    }
+}
