@@ -113,7 +113,7 @@ export default class MatchListItem extends React.Component {
     decideShow() {
         console.log(this.props.filterMode)
         console.log(this.state.gameMode)
-        if(this.props.filterMode === 'all' || this.props.filterMode === this.state.gameMode ||
+        if(this.props.filterMode === 'all' ||  this.state.gameMode.includes(this.props.filterMode) ||
             (this.props.filterMode === 'topTen' && this.state.rank < 10)) {
             return <div data-aos="fade-right" data-aos-duration={this.decideAnimationDelay(this.props.id)} data-aos-delay="0">
                 <div className={this.decideListType()}>

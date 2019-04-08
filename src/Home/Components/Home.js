@@ -8,8 +8,8 @@ export default class Home extends React.Component {
             <div className="Home">
                 Place-holder home page, this will be implemented in a future week
                 <Link to={{
-                    pathname: `/player/Huya_HeiMao-`,
-                    state: { playerID: 'Huya_HeiMao-' }
+                    pathname: `/player/XiGuaTv_600600`,
+                    state: { playerID: 'XiGuaTv_600600' }
                 }}>
                     Go To Start Player Page
                 </Link>

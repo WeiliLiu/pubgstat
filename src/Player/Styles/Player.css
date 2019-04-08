@@ -1,3 +1,7 @@
+.outside-container {
+    overflow: hidden;
+}
+
 .navbar{
     background-color: #e77e23!important;
     /*height: 0.5rem;*/
