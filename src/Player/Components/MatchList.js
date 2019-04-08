@@ -11,11 +11,6 @@ export default class MatchList extends React.Component {
         }
 
         this.formList = this.formList.bind(this);
-        this.parentFunc = this.parentFunc.bind(this);
-    }
-
-    parentFunc() {
-        console.log('parent called by child')
     }
 
     formList() {
@@ -24,7 +19,8 @@ export default class MatchList extends React.Component {
         var list = [];
         for(let i = 0; i < listLength; i++) {
             list.push(
-                <MatchListItem key={i} id={i} matchID={matchList[i]} playerID={this.props.playerID} parentFunc={this.parentFunc}/>
+                <MatchListItem key={i} id={i} matchID={matchList[i]} playerID={this.props.playerID}
+                                filterMode={this.props.filterMode}/>
             )
         }
         return list;

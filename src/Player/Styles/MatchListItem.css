@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.btn {
+.this-btn {
     font-weight: bold;
     padding-bottom: 0;
 }
@@ -133,7 +133,7 @@
         border-color: #2a80b9;
     }
 
-    .btn {
+    .this-btn {
         font-size: 0.8rem;
         padding: 0;
     }
@@ -168,7 +168,7 @@
 }
 
 @media (max-width: 1000px) {
-    .btn {
+    .this-btn {
         font-size: 0.8rem;
         padding: 0;
     }

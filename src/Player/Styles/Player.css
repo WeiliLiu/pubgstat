@@ -88,6 +88,39 @@
     padding: 0;
 }
 
+.filter-all-button, .filter-solo-button, .filter-duo-button,
+.filter-squad-button, .filter-topten-button {
+    margin-bottom: 0.5rem;
+    background-color: white;
+    color: black;
+    border-color: whitesmoke;
+    width: 5rem;
+}
+
+.filter-all-button:hover {
+    color: white;
+    background-color: #282828;
+    border: whitesmoke;
+}
+
+.filter-solo-button:hover {
+    color: white;
+    background-color: #1bbc9d;
+    border: whitesmoke;
+}
+
+.filter-duo-button:hover {
+    color: white;
+    background-color: #e77e23;
+    border: whitesmoke;
+}
+
+.filter-squad-button:hover {
+    color: white;
+    background-color: #2a80b9;
+    border: whitesmoke;
+}
+
 /* Media Queries*/
 @media(max-width: 768px) {
     .playerNameBar {
@@ -104,6 +137,10 @@
 
     .game-mode-info-col {
         padding-left: 0;
+    }
+
+    .filter-button-group {
+        width: 100%;
     }
 }
 

@@ -18,6 +18,7 @@ export default class MatchListItem extends React.Component {
         this.componentDidMount = this.componentDidMount.bind(this);
         this.checkMatchOutcome = this.checkMatchOutcome.bind(this);
         this.decideButtonColor = this.decideButtonColor.bind(this);
+        this.decideShow = this.decideShow.bind(this);
     }
 
     componentDidMount() {
@@ -54,14 +55,14 @@ export default class MatchListItem extends React.Component {
 
     checkMatchOutcome(won) {
         if(won === 'true') {
-            return <div className="btn outcome">won</div>
+            return <div className="btn outcome this-btn">won</div>
         }else {
-            return <div className="btn">lost</div>
+            return <div className="btn this-btn">lost</div>
         }
     }
 
     decideHeader(gamemode) {
-        return <div className="squad-header btn col2">{this.state.gameMode.toUpperCase()}</div>
+        return <div className="squad-header btn this-btn col2">{this.state.gameMode.toUpperCase()}</div>
     }
 
     decideListType() {
@@ -90,32 +91,35 @@ export default class MatchListItem extends React.Component {
                 <Link to={{
                     pathname: `/match/${this.props.matchID}`,
                     state: { matchID: this.props.matchID }
-                }}><div className="btn detail-button">details</div></Link>
+                }}><div className="btn this-btn detail-button">details</div></Link>
             </div>
         }else if(gameMode === 'DUO' || gameMode === 'DUO-FPP') {
             return <div className="col-md-2 col-12 text-center detail-box-duo">
                 <Link to={{
                     pathname: `/match/${this.props.matchID}`,
                     state: { matchID: this.props.matchID }
-                }}><div className="btn detail-button">details</div></Link>
+                }}><div className="btn this-btn detail-button">details</div></Link>
             </div>
         }else {
             return <div className="col-md-2 col-12 text-center detail-box-squad">
                 <Link to={{
                     pathname: `/match/${this.props.matchID}`,
                     state: { matchID: this.props.matchID }
-                }}><div className="btn detail-button">details</div></Link>
+                }}><div className="btn this-btn detail-button">details</div></Link>
             </div>
         }
     }
 
-    render() {
-        return(
-            <div data-aos="fade-right" data-aos-duration={this.decideAnimationDelay(this.props.id)} data-aos-delay="0">
+    decideShow() {
+        console.log(this.props.filterMode)
+        console.log(this.state.gameMode)
+        if(this.props.filterMode === 'all' || this.props.filterMode === this.state.gameMode ||
+            (this.props.filterMode === 'topTen' && this.state.rank < 10)) {
+            return <div data-aos="fade-right" data-aos-duration={this.decideAnimationDelay(this.props.id)} data-aos-delay="0">
                 <div className={this.decideListType()}>
                     <div className="col-md-2 col-12 text-center game-mode-box">
                         <div className="list-item-title">mode</div>
-                        <div className="btn">{this.state.gameMode.toUpperCase()}</div>
+                        <div className="btn this-btn">{this.state.gameMode.toUpperCase()}</div>
                     </div>
                     <div className="col-md-2 col-6 text-center result-box">
                         <div className="list-item-title">result</div>
@@ -123,18 +127,28 @@ export default class MatchListItem extends React.Component {
                     </div>
                     <div className="col-md-2 col-6 text-center rank-box">
                         <div className="list-item-title">rank</div>
-                        <div className="btn rank">#{this.state.rank}</div>
+                        <div className="btn this-btn rank">#{this.state.rank}</div>
                     </div>
                     <div className="col-md-2 col-6 text-center damage-box">
                         <div className="list-item-title">damage</div>
-                        <div className="btn">{String(parseFloat(this.state.playerMatchInfo.damageDealt).toFixed(1))}</div>
+                        <div className="btn this-btn">{String(parseFloat(this.state.playerMatchInfo.damageDealt).toFixed(1))}</div>
                     </div>
                     <div className="col-md-2 col-6 text-center kills-box">
                         <div className="list-item-title">kills</div>
-                        <div className="btn">{this.state.playerMatchInfo.kills}</div>
+                        <div className="btn this-btn">{this.state.playerMatchInfo.kills}</div>
                     </div>
                     {this.decideButtonColor()}
                 </div>
+            </div>
+        }else {
+            return
+        }
+    }
+
+    render() {
+        return(
+            <div>
+                {this.decideShow()}
             </div>
         )
     }

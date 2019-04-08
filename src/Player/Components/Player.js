@@ -18,10 +18,12 @@ export default class Player extends React.Component {
             playerSeasonStatsSquad: '',
             playerSeasonStatsFppSquad: '',
             matchIDList: '',
+            filterMode: 'all',
             loading: false
         };
 
         this.componentDidMount = this.componentDidMount.bind(this);
+        this.filter = this.filter.bind(this);
     }
 
     componentDidMount() {
@@ -65,6 +67,12 @@ export default class Player extends React.Component {
             .catch(error => {
                 console.log(error)
             })
+    }
+
+    filter = (param) => (e) => {
+        this.setState({
+            filterMode: param
+        });
     }
 
     render() {
@@ -115,8 +123,31 @@ export default class Player extends React.Component {
                 <div className="row justify-content-center bottom-half">
                     <div className="col-12 row full-container">
                         <div className="col-sm-12 col-md-8 match-list-col">
+                            <div className="btn-group filter-button-group" role="group" aria-label="Basic example">
+                                <button type="button" className="btn btn-secondary filter-all-button"
+                                        onClick={this.filter('all')}>
+                                    All
+                                </button>
+                                <button type="button" className="btn btn-secondary filter-solo-button"
+                                        onClick={this.filter('solo')}>
+                                    Solo
+                                </button>
+                                <button type="button" className="btn btn-secondary filter-duo-button"
+                                        onClick={this.filter('duo')}>
+                                    Duo
+                                </button>
+                                <button type="button" className="btn btn-secondary filter-squad-button"
+                                        onClick={this.filter('squad')}>
+                                    Squad
+                                </button>
+                                <button type="button" className="btn btn-secondary filter-topten-button"
+                                        onClick={this.filter('topTen')}>
+                                    Top 10
+                                </button>
+                            </div>
                             <div className="container-fluid match-list-container">
-                                <MatchList matchIDList={this.state.matchIDList} playerID={this.state.playerID}/>
+                                <MatchList matchIDList={this.state.matchIDList} playerID={this.state.playerID}
+                                            filterMode={this.state.filterMode}/>
                             </div>
                         </div>
                         <div className="col-sm-12 col-md-4 game-mode-info-col">
