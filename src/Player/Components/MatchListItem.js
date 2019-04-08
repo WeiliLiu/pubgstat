@@ -68,7 +68,7 @@ export default class MatchListItem extends React.Component {
     decideListType() {
         let gameMode = this.state.gameMode.toUpperCase();
         if(gameMode === 'SOLO' || gameMode === 'SOLO-FPP') {
-            return "row item-container-solo shadow-sm"
+            return "row item-container-solo item-container-correction shadow-sm"
         }else if(gameMode === 'DUO' || gameMode === 'DUO-FPP') {
             return "row item-container-duo shadow-sm"
         } else {
@@ -111,8 +111,6 @@ export default class MatchListItem extends React.Component {
     }
 
     decideShow() {
-        console.log(this.props.filterMode)
-        console.log(this.state.gameMode)
         if(this.props.filterMode === 'all' ||  this.state.gameMode.includes(this.props.filterMode) ||
             (this.props.filterMode === 'topTen' && this.state.rank < 10)) {
             return <div data-aos="fade-right" data-aos-duration={this.decideAnimationDelay(this.props.id)} data-aos-delay="0">

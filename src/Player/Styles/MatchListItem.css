@@ -19,6 +19,10 @@
     margin-bottom: 0.5rem;
     background-color: white;
     border-left: solid 1rem;
+    /*border-color: #1bbc9d;*/
+}
+
+.item-container-correction {
     border-color: #1bbc9d;
 }
 
