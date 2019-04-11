@@ -1,0 +1,21 @@
+.post-editor {
+    /*margin: 1rem 20%;*/
+}
+
+.post-editor-button {
+    background-color: #CCCC99;
+    border: 0;
+    width: 10rem;
+    border-radius: 0;
+    font-size: 1rem;
+}
+
+.post-editor-button:hover {
+    background-color: #666633;
+}
+
+@media(max-width: 900px) {
+    .post-editor {
+        margin: 1rem 0;
+    }
+}

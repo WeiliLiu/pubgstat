@@ -1,0 +1,46 @@
+.padded-container {
+    background-color: white;
+    padding: 2rem;
+}
+
+.weapon-dropdown {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.weapon-dropdown-toggle-button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #CCCC99;
+    border-color: #CCCC99;
+    color: white;
+}
+
+.weapon-dropdown-toggle-button:hover {
+    background-color: #666633;
+}
+
+.weapon-dropdown-toggle-button:active,
+.weapon-dropdown-toggle-button:focus {
+    background-color: #666633!important;
+}
+
+.dropdown-item:hover {
+    background-color: #CCCC99;
+    color: white;
+}
+
+.hide-container {
+    display: none;
+}
+
+/* Media Queries*/
+@media(max-width: 768px) {
+    .item-row {
+        justify-content: center;
+    }
+
+    .padded-container {
+        padding: 1rem;
+    }
+}

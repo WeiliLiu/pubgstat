@@ -1,0 +1,26 @@
+.table-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.inactive-link {
+    color: gray;
+}
+
+.inactive-link:hover {
+    color: #CCCC99;
+}
+
+@media (min-width: 1500px) {
+    .table-container {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}
+
+@media (min-width: 1700px) {
+    .table-container {
+        padding-left: 25rem;
+        padding-right: 25rem;
+    }
+}

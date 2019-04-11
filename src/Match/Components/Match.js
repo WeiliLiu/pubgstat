@@ -3,6 +3,7 @@ import battlegrounds from "battlegrounds";
 import '../Styles/Match.css';
 import GameMostCard from '../Components/GameMostCard';
 import GameRosterListItem from '../Components/GameRosterListItem';
+import NavigationBar from '../../Home/Components/NavigationBar';
 
 export default class Match extends React.Component {
     constructor(props) {
@@ -160,43 +161,7 @@ export default class Match extends React.Component {
         return(
             <div>
                 {/* Navbar Section */}
-                <nav className="navbar navbar-custom shadow-sm primary-navbar">
-                    <a className="navbar-brand" href="#">PUBGstat</a>
-                    <form className="form-inline">
-                        <div className="input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text" id="basic-addon1">@</span>
-                            </div>
-                            <input type="text" className="form-control" placeholder="Username" aria-label="Username"
-                                   aria-describedby="basic-addon1" />
-                        </div>
-                    </form>
-                </nav>
-                <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarResponsive">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarResponsive">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <a className="nav-link home-link" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link resume-link" href="#">Player</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link about-link" href="#">Leaderboards</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link skill-link" href="#">Sign in</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link experience-link" href="#">Sign up</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                <NavigationBar />
                 {/* match overview section */}
                 <div className="row justify-content-center match-overview-container">
                     <div className="col-12 match-overview shadow-sm" data-aos="fade-up" data-aos-duration={400} data-aos-delay="0">

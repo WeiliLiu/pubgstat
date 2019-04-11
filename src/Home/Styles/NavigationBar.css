@@ -1,0 +1,55 @@
+.navbar-wrapper {
+
+}
+
+.navbar{
+    background-color: #CCCC99!important;
+    /*height: 0.5rem;*/
+    /*padding: 0;*/
+}
+
+.navbar-dark {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-dark a {
+    color: black!important;
+    font-size: 0.9rem;
+}
+
+.navbar-nav li {
+    padding-right: .7rem;
+}
+
+.primary-navbar {
+    background-color: white!important;
+    /*padding-top: 0.8rem;*/
+    /*padding-bottom: 0.8rem;*/
+}
+
+.navbar-toggler-icon {
+    font-size: 0.8rem;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar-brand img {
+    height: 2.6rem;
+}
+
+.secondary-navbar a {
+    color: white;
+}
+
+.navbar-brand {
+    color: black;
+    font-size: 1.4rem;
+    font-wight: bold;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}

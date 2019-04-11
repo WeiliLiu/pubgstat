@@ -36,7 +36,7 @@
 }
 
 .list-title-row {
-    background-color: #3598dc;
+    background-color: #CCCC99;
     /*background-color: red;*/
     margin: 0;
     color: white;
@@ -51,7 +51,7 @@
 
 .rank-title-box:hover {
     cursor: pointer;
-    background-color: #34495e;
+    background-color: #666633;
 }
 
 .member-title {

@@ -1,0 +1,26 @@
+.thread-list {
+    /*background-color: white;*/
+    padding: 1rem;
+}
+
+.thread-container {
+    /*background-color: white;*/
+    /*min-height: 100%;*/
+    /*width: 100%;*/
+    /*z-index: 0;*/
+    /*position: absolute;*/
+}
+
+@media (min-width: 1500px) {
+    .thread-container {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}
+
+@media (min-width: 1700px) {
+    .thread-container {
+        padding-left: 25rem;
+        padding-right: 25rem;
+    }
+}

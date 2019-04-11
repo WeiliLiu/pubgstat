@@ -3,6 +3,7 @@ import '../Styles/Player.css';
 import battlegrounds from 'battlegrounds';
 import GameModeInfoCard from "./GameModeInfoCard";
 import MatchList from '../Components/MatchList';
+import NavigationBar from '../../Home/Components/NavigationBar';
 
 export default class Player extends React.Component {
     constructor(props) {
@@ -78,43 +79,7 @@ export default class Player extends React.Component {
     render() {
         return(
             <div className="container-fluid outside-container">
-                <nav className="navbar navbar-custom shadow-sm primary-navbar">
-                    <a className="navbar-brand" href="#">PUBGstat</a>
-                    <form className="form-inline">
-                        <div className="input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text" id="basic-addon1">@</span>
-                            </div>
-                            <input type="text" className="form-control" placeholder="Username" aria-label="Username"
-                                   aria-describedby="basic-addon1" />
-                        </div>
-                    </form>
-                </nav>
-                <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarResponsive">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarResponsive">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <a className="nav-link home-link" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link resume-link" href="#">Player</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link about-link" href="#">Leaderboards</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link skill-link" href="#">Sign in</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link experience-link" href="#">Sign up</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                <NavigationBar />
                 <div className="row justify-content-center playerContainer">
                     <div className="col-12 playerNameBar shadow-sm">
                         <div className="playerName">{this.state.playerName}</div>
