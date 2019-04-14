@@ -1,5 +1,8 @@
 .padded-container {
-    background-color: white;
+    border-left: solid 1px;
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+    border-color: #DEE2E6;
     padding: 2rem;
 }
 
@@ -11,22 +14,30 @@
 .weapon-dropdown-toggle-button {
     padding-left: 2rem;
     padding-right: 2rem;
-    background-color: #CCCC99;
-    border-color: #CCCC99;
+    background-color: #66CC75;
+    border-color: #66CC75;
+    font-size: 0.9rem;
     color: white;
 }
 
 .weapon-dropdown-toggle-button:hover {
-    background-color: #666633;
+    background-color: #66CC75;
+    border-color: #66CC75;
+    color: white;
 }
 
 .weapon-dropdown-toggle-button:active,
 .weapon-dropdown-toggle-button:focus {
-    background-color: #666633!important;
+    background-color: #66CC75!important;
+    border-color: #66CC75!important;
+}
+
+.dropdown-item {
+    font-size: 0.9rem;
 }
 
 .dropdown-item:hover {
-    background-color: #CCCC99;
+    background-color: #66CC75;
     color: white;
 }
 
@@ -42,5 +53,6 @@
 
     .padded-container {
         padding: 1rem;
+        border: 0;
     }
 }

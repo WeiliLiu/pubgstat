@@ -28,6 +28,7 @@ export default class Player extends React.Component {
     }
 
     componentDidMount() {
+        console.log("player.js component is mounted")
         api.getPlayers({ names: [this.props.location.state.playerID] })
             .then(response => {
                 let playerData = response[0]
@@ -74,6 +75,12 @@ export default class Player extends React.Component {
         this.setState({
             filterMode: param
         });
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        if (nextProps.location.state.reload === 'desiredState') {
+            window.location.reload()
+        }
     }
 
     render() {

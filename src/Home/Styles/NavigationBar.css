@@ -1,31 +1,110 @@
-.navbar-wrapper {
-
+body, html {
+    background-color: white;
 }
 
-.navbar{
-    background-color: #CCCC99!important;
-    /*height: 0.5rem;*/
-    /*padding: 0;*/
-}
-
-.navbar-dark {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.navbar-dark a {
+.link-for-navbar {
     color: black!important;
+    font-size: 0.95rem;
+}
+
+.link-for-navbar:hover {
+    color: gray!important;
+}
+
+.search-form {
+    height: 100%;
+}
+
+.search-icon {
+    border-right: 0;
+    background-color: #ededed;
+    border-color: white;
+    border-top-left-radius: 10em;
+    border-bottom-left-radius: 10em;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.search-icon-focused {
+    border-right: 0;
+    background-color: white;
+    border-top-color: #66CC75;
+    border-left-color: #66CC75;
+    border-bottom-color: #66CC75;
+    border-top-left-radius: 10em;
+    border-bottom-left-radius: 10em;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.user-search-bar {
+    height: 100%;
     font-size: 0.9rem;
+    -webkit-appearance: textfield;
+    width: 15rem;
+    outline: none;
+    background-color: #ededed;
+    border: solid 1px;
+    border-left: 0;
+    border-top-color: white;
+    border-bottom-color: white;
+    border-right-color: white;
+    padding: 0 10px 0 0;
+    border-top-right-radius: 10em;
+    border-bottom-right-radius: 10em;
+
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.user-search-bar::-webkit-search-decoration,
+.user-search-bar::-webkit-search-cancel-button {
+    display: none;
+}
+
+.user-search-bar[type=search]:focus {
+    width: 25rem;
+    background-color: #fff;
+    border-top-color: #66CC75;
+    border-right-color: #66CC75;
+    border-bottom-color: #66CC75;
+    border-left-color: white;
+}
+
+
+.user-search-bar:-moz-placeholder {
+    color: #999;
+}
+.user-search-bar::-webkit-input-placeholder {
+    color: #999;
 }
 
 .navbar-nav li {
     padding-right: .7rem;
 }
 
+.log-in-button {
+    border-color: #66CC75;
+    color: #66CC75;
+    font-size: 0.9rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}
+
+.log-in-button:hover {
+    background-color: white;
+    border-color: #66CC75;
+    color: #66CC75;
+    font-size: 0.9rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}
+
 .primary-navbar {
     background-color: white!important;
-    /*padding-top: 0.8rem;*/
-    /*padding-bottom: 0.8rem;*/
 }
 
 .navbar-toggler-icon {
@@ -33,16 +112,14 @@
 }
 
 .navbar-brand {
-    padding: 0;
+    padding:  0.1rem 0.3rem 0.1rem 0.3rem;
 }
 
 .navbar-brand img {
-    height: 2.6rem;
+    height: 2.3rem;
 }
 
-.secondary-navbar a {
-    color: white;
-}
+
 
 .navbar-brand {
     color: black;
@@ -52,4 +129,27 @@
 
 .navbar-toggler-icon {
     color: white;
+}
+
+@media (max-width: 768px) {
+    .user-search-bar {
+        width: 15rem;
+        height: 2rem;
+        border: 0;
+        margin-bottom: 0.8rem;
+    }
+
+    .user-search-bar[type=search]:focus {
+        width: 15rem;
+    }
+
+    .search-icon {
+        border: 0;
+        margin-bottom: 0.8rem;
+    }
+
+    .search-icon-focused {
+        border: 0;
+        margin-bottom: 0.8rem;
+    }
 }

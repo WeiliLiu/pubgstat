@@ -3,12 +3,17 @@
     margin-bottom: 3rem;
 }
 
+.table-header {
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
 .inactive-link {
     color: gray;
 }
 
 .inactive-link:hover {
-    color: #CCCC99;
+    color: gray;
 }
 
 @media (min-width: 1500px) {

@@ -45,7 +45,7 @@ export default class ItemList extends React.Component {
 
                 {/* Item List */}
                 <div className="table-container">
-                    <h1>In-game Items</h1>
+                    <h1 className="table-header">In-game Items</h1>
                     <ul className="nav nav-tabs navigation-tabs">
                         <li className="nav-item">
                             <a className={this.displayLink('Weapons')} href="#" onClick={this.changeDisplaySection('Weapons')}>Weapons</a>

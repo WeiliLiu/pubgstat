@@ -11,10 +11,18 @@
     /*position: absolute;*/
 }
 
+.thread-header-content img {
+    height: 10rem;
+}
+
+.thread-header-container {
+    padding: 4rem 1rem 1rem 1rem;
+}
+
 @media (min-width: 1500px) {
     .thread-container {
-        padding-left: 10rem;
-        padding-right: 10rem;
+        padding-left: 15rem;
+        padding-right: 15rem;
     }
 }
 

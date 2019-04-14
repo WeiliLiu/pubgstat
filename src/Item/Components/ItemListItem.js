@@ -27,7 +27,8 @@ export default class ItemListItem extends React.Component {
                     <div className="card-body item-body">
                         <Link to={{
                             pathname: `/item/${this.props.title.split(' ').join('_')}`,
-                            state: { itemID: this.props.title }
+                            state: { itemID: this.props.title,
+                                     img: this.props.image}
                         }}><h6 className="card-title item-title">{this.props.title}</h6></Link>
                         <p className="card-subtitle">{this.props.type}</p>
                     </div>

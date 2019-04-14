@@ -1,8 +1,14 @@
+.match-overview-container {
+    background-color: white;
+}
+
 .match-overview {
     margin-top: 2rem;
     padding: 1rem 1.5rem 1rem 1.5rem;
     background-color: white;
     color: black;
+    /*border-color: black;*/
+    /*border: solid 1px;*/
 }
 
 .match-info-row {
@@ -36,7 +42,7 @@
 }
 
 .list-title-row {
-    background-color: #CCCC99;
+    background-color: #e8554e;
     /*background-color: red;*/
     margin: 0;
     color: white;
@@ -51,7 +57,7 @@
 
 .rank-title-box:hover {
     cursor: pointer;
-    background-color: #666633;
+    background-color: #e8554e;
 }
 
 .member-title {
@@ -59,6 +65,31 @@
     padding-bottom: 1.5rem;
 }
 
+.chart-container {
+    overflow: hidden;
+    background-color: #f7f7f9;
+    /*margin-top: 1rem;*/
+    margin-bottom: 1rem;
+    justify-content: center;
+    max-width: 100vw;
+}
+
+.select-form {
+    /*background-color: red;*/
+    width: 100%;
+}
+
+.select-row {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: solid 3px #f7f7f9;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    /*background-color: black;*/
+    margin-top: 1rem;
+    max-width: 100vw;
+}
 
 @media (max-width: 992px) {
     .match-overview {

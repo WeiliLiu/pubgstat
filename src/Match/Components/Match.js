@@ -4,6 +4,7 @@ import '../Styles/Match.css';
 import GameMostCard from '../Components/GameMostCard';
 import GameRosterListItem from '../Components/GameRosterListItem';
 import NavigationBar from '../../Home/Components/NavigationBar';
+import { ScatterChart, XAxis, YAxis, ZAxis, Tooltip, Legend, Scatter, CartesianGrid, ResponsiveContainer } from 'recharts';
 
 export default class Match extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ export default class Match extends React.Component {
             rosterRanks: '',
             rosterTotalKills: '',
             rosterTotalDamage: '',
+            rosterTotalAssists: '',
             gameInfo: '',
             mostKills: 0,
             mostKillsPlayer: '',
@@ -21,12 +23,18 @@ export default class Match extends React.Component {
             highestDamagePlayer: '',
             largestKillStreak: 0,
             largestKillStreakPlayer: '',
+            xAxis: '',
+            yAxis: '',
             loading: false
         }
 
         this.componentDidMount = this.componentDidMount.bind(this);
         this.renderRosterList = this.renderRosterList.bind(this);
         this.sort = this.sort.bind(this);
+        this.gatherData = this.gatherData.bind(this);
+        this.select_axis = this.select_axis.bind(this);
+        this.decideXAxis = this.decideXAxis.bind(this);
+        this.decideYAxis = this.decideYAxis.bind(this);
     }
 
     componentDidMount() {
@@ -45,12 +53,14 @@ export default class Match extends React.Component {
                 var roster_stats = [];
                 var roster_total_kills = [];
                 var roster_total_damage = [];
+                var roster_total_assists = [];
                 for(let i = 0; i < num_rosters; i++) {
                     // console.log(response.rosters[i].participants)
                     roster_stats.push(response.rosters[i].attributes.stats.rank)
                     let num_participants = Object.keys(response.rosters[i].participants).length;
                     var cur_total_kills = 0;
                     var cur_total_damage = 0;
+                    var cur_total_assists = 0;
                     var cur_roster = [];
                     for(let j = 0; j < num_participants; j++) {
                         // console.log(response.rosters[i].participants[j].attributes.stats.kills)
@@ -72,10 +82,12 @@ export default class Match extends React.Component {
                         }
                         cur_total_kills += response.rosters[i].participants[j].attributes.stats.kills;
                         cur_total_damage += response.rosters[i].participants[j].attributes.stats.damageDealt;
+                        cur_total_assists += response.rosters[i].participants[j].attributes.stats.assists;
                         cur_roster.push(cur_player);
                     }
                     roster_total_kills.push(cur_total_kills);
                     roster_total_damage.push(cur_total_damage);
+                    roster_total_assists.push(cur_total_assists);
                     rosters.push(cur_roster);
                 }
 
@@ -85,6 +97,7 @@ export default class Match extends React.Component {
                     rosterRanks: roster_stats,
                     rosterTotalKills: roster_total_kills,
                     rosterTotalDamage: roster_total_damage,
+                    rosterTotalAssists: roster_total_assists,
                     mostKills: most_kills,
                     mostKillsPlayer: most_kills_player,
                     highestDamage: highest_damage,
@@ -157,11 +170,82 @@ export default class Match extends React.Component {
         })
     }
 
+    decideXAxis() {
+        switch(this.state.xAxis) {
+            case 'Total Kills':
+                return this.state.rosterTotalKills;
+            case 'total_damage':
+                return this.state.rosterTotalDamage;
+            case 'total_assists':
+                return this.state.rosterTotalAssists;
+        }
+    }
+
+    decideYAxis() {
+        switch(this.state.yAxis) {
+            case 'Total Kills':
+                return this.state.rosterTotalKills;
+            case 'total_damage':
+                return this.state.rosterTotalDamage;
+            case 'total_assists':
+                return this.state.rosterTotalAssists;
+        }
+    }
+
+    gatherData() {
+        if(this.state.xAxis === '' || this.state.yAxis === '') {
+            return []
+        }
+
+        var data = []
+        var x_axis_list = this.decideXAxis();
+        var y_axis_list = this.decideYAxis();
+        let num_rosters = Object.keys(this.state.rosterTotalDamage).length;
+
+        for(let i = 0; i < num_rosters; i++) {
+            var temp_dataItem = {}
+            temp_dataItem["x"] = x_axis_list[i];
+            temp_dataItem["y"] = y_axis_list[i];
+            temp_dataItem["z"] = this.state.rosterRanks[i];
+            data.push(temp_dataItem);
+        }
+        return data;
+    }
+
+    select_axis = (param) => (e) => {
+        // console.log(param)
+        // console.log(e.target.value);
+        if(param === 'x') {
+            if(e.target.value === "Choose x-axis...") {
+                this.setState({
+                    xAxis: ""
+                })
+            }else {
+                this.setState({
+                    xAxis: e.target.value
+                })
+            }
+        }else {
+            if(e.target.value === "Choose y-axis...") {
+                this.setState({
+                    yAxis: ''
+                })
+            }else {
+                this.setState({
+                    yAxis: e.target.value
+                })
+            }
+        }
+    }
+
     render() {
         return(
-            <div>
+            <div className="match-whole-container">
+                {console.log(this.state.xAxis)}
+                {console.log(this.state.yAxis)}
                 {/* Navbar Section */}
                 <NavigationBar />
+
                 {/* match overview section */}
                 <div className="row justify-content-center match-overview-container">
                     <div className="col-12 match-overview shadow-sm" data-aos="fade-up" data-aos-duration={400} data-aos-delay="0">
@@ -195,27 +279,68 @@ export default class Match extends React.Component {
                     {/* Three most info cards section */}
                     <div className="col-12 row most-cards">
                         <div className="col-md-4 col-sm-12">
-                            <GameMostCard title="Most Kills"
+                            <GameMostCard title="Kills"
                                           id={1}
                                           value={this.state.mostKills}
                                           player={this.state.mostKillsPlayer}
                             />
                         </div>
                         <div className="col-md-4 col-sm-12">
-                            <GameMostCard title="Highest Damage"
+                            <GameMostCard title="Damage"
                                           id={2}
                                           value={String(parseFloat(this.state.highestDamage).toFixed(1))}
                                           player={this.state.highestDamagePlayer}
                             />
                         </div>
                         <div className="col-md-4 col-sm-12">
-                            <GameMostCard title="Largest Kill Streaks"
+                            <GameMostCard title="Kill Streaks"
                                           id={3}
                                           value={this.state.largestKillStreak}
                                           player={this.state.largestKillStreakPlayer}
                             />
                         </div>
                     </div>
+
+                    {/* Data visualization secion */}
+                    <form className="select-form" data-aos="fade-up" data-aos-duration={400} data-aos-delay="0">
+                        <div className="form-row align-items-center select-row">
+                            <div className="col-auto my-1">
+                                {/*<label className="mr-sm-2" htmlFor="inlineFormCustomSelect">x-axis</label>*/}
+                                <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={this.select_axis('x')}>
+                                    <option selected>Choose x-axis...</option>
+                                    <option value="Total Kills">Total Kills</option>
+                                    <option value="total_damage">Total Damage</option>
+                                    <option value="total_assists">Total Assists</option>
+                                </select>
+                            </div>
+                            <div className="col-auto my-1">
+                                {/*<label className="mr-sm-2" htmlFor="inlineFormCustomSelect">y-axis</label>*/}
+                                <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={this.select_axis('y')}>
+                                    <option selected>Choose y-axis...</option>
+                                    <option value="Total Kills">Total Kills</option>
+                                    <option value="total_damage">Total Damage</option>
+                                    <option value="total_assists">Total Assists</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div className="container-fluid chart-container" data-aos="fade-up" data-aos-duration={400} data-aos-delay="0">
+                        <ResponsiveContainer width={"90%"} height={600}>
+                            <ScatterChart width={500} height={500}
+                                          margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="x" name={this.state.xAxis} unit="" type = "number"/>
+                                <YAxis dataKey="y" name={this.state.yAxis} unit="" />
+                                <ZAxis dataKey="z" range={[300, 30]} name="Rank" unit="" />
+                                <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                                <Legend />
+                                <Scatter name="Team Stats" data={this.gatherData()} fill="#e8554e" />
+                                {/*<Scatter name="B school" data={data02} fill="#82ca9d" />*/}
+                            </ScatterChart>
+                        </ResponsiveContainer>
+                    </div>
+
                     {/* Roster List Section */}
                     <div className={"col-12 container-fluid roster-list-container shadow-sm"} data-aos="fade-up" data-aos-duration={1500} data-aos-delay="0">
                         <div className="row list-title-row">

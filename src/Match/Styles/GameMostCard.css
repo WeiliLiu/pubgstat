@@ -1,26 +1,26 @@
 .game-most-card {
     /*border-radius: 0.5rem;*/
-}
-
-.game-most-card-title {
-    padding-left: 1.5rem;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #CCCC99;
-    color: white;
+    border: 0;
+    border-radius: 1rem;
+    background-color: white;
 }
 
 .game-most-card-body {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    border-radius: 1rem;
+    /*border-left: solid 0.5rem red;*/
+    /*border-right: solid 0.5rem red;*/
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+    /*background-image: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);*/
 }
 
 .game-most-card-body h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 .game-most-card-body h4 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
 }

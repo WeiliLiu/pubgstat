@@ -34,7 +34,7 @@ export default class WeaponsList extends React.Component {
             <div className={this.decideDisplay()}>
                 <h3>Weapons</h3>
                 <div className="dropdown weapon-dropdown">
-                    <button className="btn btn-secondary dropdown-toggle weapon-dropdown-toggle-button" type="button" id="dropdownMenuButton"
+                    <button className="btn dropdown-toggle weapon-dropdown-toggle-button" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Weapon Type
                     </button>
