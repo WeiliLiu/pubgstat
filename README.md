@@ -31,6 +31,7 @@ This will start the project on localhost
 
 ## Demo
 
-### Screenshot of the project
-
 A demo of the project is deployed at the link https://pubgstat-db9ba.firebaseapp.com/
+
+### Screenshot of the project
+![alt text](https://firebasestorage.googleapis.com/v0/b/pubgstat-db9ba.appspot.com/o/d71d07deb036d0d63666f6652833621.png?alt=media&token=e806e77e-7df4-401a-8302-cbc9156f35ad)
