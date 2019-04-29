@@ -22,4 +22,9 @@ This will install all the dependencies for running the project, after the instal
 npm start
 ```
 
-this will start the project on localhost
+This will start the project on localhost
+
+## Built With
+
+* [React](https://reactjs.org/) - The web framework used
+* [Firebase](https://firebase.google.com/) - The backend database used
