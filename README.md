@@ -8,4 +8,10 @@ If you want to run a copy of the project on your local machine, these instructio
 
 ### Prerequisite
 
-The project requires a number of dependency libraries, which was intentionally not uploaded to github in order to save space. In order to get all the dependencies installed
+The project requires a number of dependency libraries, which was intentionally not uploaded to github in order to save space. In order to get all the dependencies installed and be able to run the project, follow these steps
+
+Clone the project repositories to your local machine and in the terinal, cd into the root directory of the project, then run the command 
+
+```
+npm install
+```
