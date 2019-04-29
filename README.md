@@ -28,3 +28,9 @@ This will start the project on localhost
 
 * [React](https://reactjs.org/) - The web framework used
 * [Firebase](https://firebase.google.com/) - The backend database used
+
+## Demo
+
+### Screenshot of the project
+
+A demo of the project is deployed at the link https://pubgstat-db9ba.firebaseapp.com/
