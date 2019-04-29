@@ -119,7 +119,16 @@ body, html {
     height: 2.3rem;
 }
 
+.navbar-avatar-container {
+    /*width: 3rem;*/
+    /*float: left;*/
+    /*margin-right: 2rem;*/
+}
 
+.navbar-avatar-container img {
+    height: 2.5rem;
+    border-radius: 50%;
+}
 
 .navbar-brand {
     color: black;
@@ -129,6 +138,35 @@ body, html {
 
 .navbar-toggler-icon {
     color: white;
+}
+
+.navbar-dropdown-btn {
+    font-size: 0.9rem;
+    /*background-color: green;*/
+    padding: 0;
+    color: black;
+    line-height: 2.5rem;
+}
+
+.navbar-dropdown-btn:hover {
+    color: #66cc75;
+}
+
+.navbar-dropdown-btn img {
+    height: 2.5rem;
+    width: 2.5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.navbar-avatar-container {
+    float: left;
+    margin-right: 0.5rem;
+    /*background-color: red;*/
+}
+
+.navbar-dropdown-menu-icon {
+    margin-right: 1rem;
 }
 
 @media (max-width: 768px) {

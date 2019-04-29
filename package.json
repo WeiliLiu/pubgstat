@@ -14,6 +14,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-toggle": "^4.0.2",
+    "react-twitter-widgets": "^1.7.1",
+    "react-with-firebase-auth": "^1.0.2",
     "recharts": "^1.5.0"
   },
   "scripts": {
@@ -30,5 +32,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "firebase": "^5.10.1"
+  }
 }

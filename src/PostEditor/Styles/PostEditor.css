@@ -1,5 +1,6 @@
 .post-editor {
     /*margin: 1rem 20%;*/
+    /*background-color: red;*/
 }
 
 .post-editor-button {
@@ -12,6 +13,11 @@
 
 .post-editor-button:hover {
     background-color: #666633;
+}
+
+.post-editor-error-message {
+    color: red;
+    font-size: 0.8rem;
 }
 
 @media(max-width: 900px) {

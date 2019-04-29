@@ -1,0 +1,21 @@
+.sign-up-section-container {
+    width: 27rem;
+    height: 100%;
+    /*background-color: red;*/
+    float: left;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding-top: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.sign-up-error-message {
+    font-size: 0.8rem;
+    color: red;
+}
+
+.sign-up-success-message {
+    font-size: 0.8rem;
+    color: green;
+}

@@ -1,0 +1,22 @@
+.log-in-container{
+    width: 100vw;
+    height: 100vh;
+    /*background-color: yellow;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log-in-inner-container{
+    /*background-color: rgba(0, 0, 0, 0.7);*/
+    background-color: white;
+    /*height: auto;*/
+    height: 31rem;
+    width: 50rem;
+    border-radius: 1rem;
+}
+
+.login-page-form {
+    margin: 0;
+    height: 2.5rem!important;
+}

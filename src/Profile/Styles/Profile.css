@@ -1,0 +1,42 @@
+.profile-avatar-container img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    border: solid 0.3rem white;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+}
+
+.profile-avatar-container {
+    /*background-color: blue;*/
+}
+
+.profile-page-username-container {
+    /*background-color: yellow;*/
+    padding: 2rem;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.profile-page-outer-container {
+    display: flex;
+    /*background-color: green;*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-main-info-container {
+    background-color: whitesmoke;
+    padding: 2rem;
+    width: 1000px;
+}
+
+@media(max-width: 1032px) {
+    .profile-main-info-container {
+        width: 100%;
+    }
+}

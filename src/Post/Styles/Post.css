@@ -1,19 +1,26 @@
 .post {
     margin: 0;
     padding: 0;
-    /*background-color: red;*/
+    /*width: 100%;*/
+    /*background-color: blue;*/
+    height: auto;
+    overflow: hidden;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+
 }
 
 .post-title {
-    margin-bottom: 0;
-    color: black;
-    font-weight: lighter;
-    padding: 0.7rem 0 0.7rem 1rem;
-    background-color: whitesmoke;
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem;
-    border: solid 1px #cccccc;
-    font-size: 0.95rem;
+    margin-bottom: 0!important;
+    color: black!important;
+    font-weight: lighter!important;
+    padding: 0.7rem 0 0.7rem 1rem!important;
+    background-color: whitesmoke!important;
+    border-top-left-radius: 0.3rem!important;
+    border-top-right-radius: 0.3rem!important;
+    border: solid 1px #cccccc!important;
+    font-size: 0.95rem!important;
 }
 
 /*.post-subtitle {*/
@@ -37,14 +44,57 @@
 .post-container {
     justify-content: center;
     border: 0;
+    width: auto;
+    overflow: hidden;
     /*border-radius: 0.3rem;*/
 }
 
-.post-avatar-container img{
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+.post-avatar-container {
+    width: 3rem;
+    float: left;
+    margin-right: 2rem;
 }
+
+.post-avatar-container img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.post-row {
+    /*background-color: red;*/
+    justify-content: center;
+    width: 100%;
+    /*width: 100%;*/
+}
+
+/*@media(max-width: 1032px) {*/
+/*    .post {*/
+/*        width: 100%;*/
+/*        display: block;*/
+/*        overflow: hidden;*/
+/*    }*/
+
+/*    .post-row {*/
+/*        width: auto;*/
+/*    }*/
+/*}*/
+
+/*@media(max-width: 768px) {*/
+/*    .post-row {*/
+/*        width: 10rem;*/
+/*    }*/
+
+/*    .post-container {*/
+/*        width: auto;*/
+/*    }*/
+
+/*    .post-avatar-container {*/
+/*        width: 50px!important;*/
+/*    }*/
+/*}*/
 
 /*@media(max-width: 900px) {*/
 /*    .post-title {*/

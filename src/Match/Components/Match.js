@@ -241,8 +241,6 @@ export default class Match extends React.Component {
     render() {
         return(
             <div className="match-whole-container">
-                {console.log(this.state.xAxis)}
-                {console.log(this.state.yAxis)}
                 {/* Navbar Section */}
                 <NavigationBar />
 

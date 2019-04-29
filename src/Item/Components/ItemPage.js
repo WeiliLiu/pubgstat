@@ -9,18 +9,19 @@ export default class ItemPage extends React.Component {
         return(
             <div>
                 <NavigationBar />
-                {/*{this.props.location.state.itemID}*/}
                 <div className="thread-container">
-                    <div className="container-fluid thread-header-container">
-                        <div className="row">
-                            <div className="col-12 thread-header-content">
-                                <h1>{this.props.location.state.itemID}</h1>
-                                <img src={this.props.location.state.img}></img>
+                    <div className="thread-inner-container">
+                        <div className="container-fluid thread-header-container">
+                            <div className="row">
+                                <div className="col-12 thread-header-content">
+                                    <h1>{this.props.match.params.id.split('_').join(' ')}</h1>
+                                    <img src={require('../Images/' + this.props.match.params.id.split('_').join(' ') + '.png')}></img>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="thread-list">
-                        <ThreadDisplay/>
+                        <div className="thread-list">
+                            <ThreadDisplay link={this.props.match.params.id}/>
+                        </div>
                     </div>
                 </div>
             </div>

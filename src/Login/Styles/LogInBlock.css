@@ -1,0 +1,14 @@
+.log-in-section-container {
+    width: 23rem;
+    height: 100%;
+    background-color: whitesmoke;
+    float: right;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 3rem;
+}
+
+.login-error-message {
+    color: red;
+    font-size: 0.8rem;
+}

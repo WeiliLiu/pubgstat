@@ -1,0 +1,11 @@
+.leaderboard-container {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    background-color: white;
+    border: solid 0.5px #ced4da;
+    margin-top: 1rem;
+}
+
+.leaderboard-top-half {
+    padding: 1rem;
+}

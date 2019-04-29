@@ -48,51 +48,51 @@ export default class EquipmentList extends React.Component {
                     </div>
                 </div>
                 <div className="row item-row">
-                    <ItemListItem title={"Parachute Pack"} type={"Backpack"} image={require('../api-assets/Assets/Item/Equipment/Backpack/Item_Back_B_01_StartParachutePack_C.png')}
+                    <ItemListItem title={"Parachute Pack"} type={"Backpack"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv1 Bag"} type={"Backpack"} image={require('../api-assets/Assets/Item/Equipment/Backpack/Item_Back_E_01_Lv1_C.png')}
+                    <ItemListItem title={"Lv1 Bag 1"} type={"Backpack"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv1 Bag"} type={"Backpack"} image={require('../api-assets/Assets/Item/Equipment/Backpack/Item_Back_E_02_Lv1_C.png')}
+                    <ItemListItem title={"Lv1 Bag 2"} type={"Backpack"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv2 Bag"} type={"Backpack"} image={require('../api-assets/Assets/Item/Equipment/Backpack/Item_Back_F_01_Lv2_C.png')}
+                    <ItemListItem title={"Lv2 Bag 1"} type={"Backpack"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv2 Bag"} type={"Backpack"} image={require('../api-assets/Assets/Item/Equipment/Backpack/Item_Back_F_02_Lv2_C.png')}
+                    <ItemListItem title={"Lv2 Bag 2"} type={"Backpack"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv3 Bag"} type={"Backpack"} image={require('../api-assets/Assets/Item/Equipment/Backpack/Item_Back_C_01_Lv3_C.png')}
+                    <ItemListItem title={"Lv3 Bag 1"} type={"Backpack"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv3 Bag"} type={"Backpack"} image={require('../api-assets/Assets/Item/Equipment/Backpack/Item_Back_C_02_Lv3_C.png')}
+                    <ItemListItem title={"Lv3 Bag 2"} type={"Backpack"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv1 Head"} type={"Headgear"} image={require('../api-assets/Assets/Item/Equipment/Headgear/Item_Head_E_01_Lv1_C.png')}
+                    <ItemListItem title={"Lv1 Head 1"} type={"Headgear"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv1 Head"} type={"Headgear"} image={require('../api-assets/Assets/Item/Equipment/Headgear/Item_Head_E_02_Lv1_C.png')}
+                    <ItemListItem title={"Lv1 Head 2"} type={"Headgear"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv2 Head"} type={"Headgear"} image={require('../api-assets/Assets/Item/Equipment/Headgear/Item_Head_F_01_Lv2_C.png')}
+                    <ItemListItem title={"Lv2 Head 1"} type={"Headgear"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv2 Head"} type={"Headgear"} image={require('../api-assets/Assets/Item/Equipment/Headgear/Item_Head_F_02_Lv2_C.png')}
+                    <ItemListItem title={"Lv2 Head 2"} type={"Headgear"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv3 Head"} type={"Headgear"} image={require('../api-assets/Assets/Item/Equipment/Headgear/Item_Head_G_01_Lv3_C.png')}
+                    <ItemListItem title={"Lv3 Head"} type={"Headgear"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Ghillie"} type={"Jacket"} image={require('../api-assets/Assets/Item/Equipment/Jacket/Item_Ghillie_02_C.png')}
+                    <ItemListItem title={"Ghillie 1"} type={"Jacket"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Ghillie"} type={"Jacket"} image={require('../api-assets/Assets/Item/Equipment/Jacket/Item_Ghillie_01_C.png')}
+                    <ItemListItem title={"Ghillie 2"} type={"Jacket"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Apple"} type={"Throwable"} image={require('../api-assets/Assets/Item/Equipment/Throwable/Item_Weapon_Apple_C.png')}
+                    <ItemListItem title={"Apple"} type={"Throwable"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"FlashBang"} type={"Throwable"} image={require('../api-assets/Assets/Item/Equipment/Throwable/Item_Weapon_FlashBang_C.png')}
+                    <ItemListItem title={"FlashBang"} type={"Throwable"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Grenade"} type={"Throwable"} image={require('../api-assets/Assets/Item/Equipment/Throwable/Item_Weapon_Grenade_C.png')}
+                    <ItemListItem title={"Grenade"} type={"Throwable"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Molotov"} type={"Throwable"} image={require('../api-assets/Assets/Item/Equipment/Throwable/Item_Weapon_Molotov_C.png')}
+                    <ItemListItem title={"Molotov"} type={"Throwable"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"SmokeBomb"} type={"Throwable"} image={require('../api-assets/Assets/Item/Equipment/Throwable/Item_Weapon_SmokeBomb_C.png')}
+                    <ItemListItem title={"SmokeBomb"} type={"Throwable"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Snowball"} type={"Throwable"} image={require('../api-assets/Assets/Item/Equipment/Throwable/Item_Weapon_Snowball_C.png')}
+                    <ItemListItem title={"Snowball"} type={"Throwable"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv1 Vest"} type={"Vest"} image={require('../api-assets/Assets/Item/Equipment/Vest/Item_Armor_E_01_Lv1_C.png')}
+                    <ItemListItem title={"Lv1 Vest"} type={"Vest"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv2 Vest"} type={"Vest"} image={require('../api-assets/Assets/Item/Equipment/Vest/Item_Armor_D_01_Lv2_C.png')}
+                    <ItemListItem title={"Lv2 Vest"} type={"Vest"}
                                   filter={this.state.filterEquipmentType}/>
-                    <ItemListItem title={"Lv3 Vest"} type={"Vest"} image={require('../api-assets/Assets/Item/Equipment/Vest/Item_Armor_C_01_Lv3_C.png')}
+                    <ItemListItem title={"Lv3 Vest"} type={"Vest"}
                                   filter={this.state.filterEquipmentType}/>
                 </div>
             </div>

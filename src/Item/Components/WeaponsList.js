@@ -51,93 +51,93 @@ export default class WeaponsList extends React.Component {
                     </div>
                 </div>
                 <div className="row item-row">
-                    <ItemListItem title={"AK47"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_AK47_C.png')}
+                    <ItemListItem title={"AK47"} type={"Assault Rifle"}
                                      filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"AUG"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_AUG_C.png')}
+                    <ItemListItem title={"AUG"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"AWM"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_AWM_C.png')}
+                    <ItemListItem title={"AWM"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"S686"} type={"Shotgun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Berreta686_C.png')}
+                    <ItemListItem title={"S686"} type={"Shotgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Beryl"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_BerylM762_C.png')}
+                    <ItemListItem title={"Beryl"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"PP19"} type={"Submachine Gun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_BizonPP19_C.png')}
+                    <ItemListItem title={"PP19"} type={"Submachine Gun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Cross Bow"} type={"Cross Bow"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Crossbow_C.png')}
+                    <ItemListItem title={"Cross Bow"} type={"Cross Bow"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"DP28"} type={"Light Machine Gun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_DP28_C.png')}
+                    <ItemListItem title={"DP28"} type={"Light Machine Gun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"FN FAL"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_FNFal_C.png')}
+                    <ItemListItem title={"FN FAL"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"G36C"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_G36C.png')}
+                    <ItemListItem title={"G36C"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Groza"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Groza_C.png')}
+                    <ItemListItem title={"Groza"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"HK416"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_HK416_C.png')}
+                    <ItemListItem title={"HK416"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Kar98k"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Kar98k_C.png')}
+                    <ItemListItem title={"Kar98k"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"M16A4"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_M16A4_C.png')}
+                    <ItemListItem title={"M16A4"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"M24"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_M24_C.png')}
+                    <ItemListItem title={"M24"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"M249"} type={"Light Machine Gun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_M249_C.png')}
+                    <ItemListItem title={"M249"} type={"Light Machine Gun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Mini14"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Mini14_C.png')}
+                    <ItemListItem title={"Mini14"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Mk14"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Mk14_C.png')}
+                    <ItemListItem title={"Mk14"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Mk47 Mutant"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Mk47Mutant_C.png')}
+                    <ItemListItem title={"Mk47 Mutant"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"MP5K"} type={"Submachine Gun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_MP5K_C.png')}
+                    <ItemListItem title={"MP5K"} type={"Submachine Gun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"QBU88"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_QBU88_C.png')}
+                    <ItemListItem title={"QBU88"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"QBZ95"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_QBZ95_C.png')}
+                    <ItemListItem title={"QBZ95"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Saiga12"} type={"Shotgun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Saiga12_C.png')}
+                    <ItemListItem title={"Saiga12"} type={"Shotgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"SCAR-L"} type={"Assault Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_SCAR-L_C.png')}
+                    <ItemListItem title={"SCAR-L"} type={"Assault Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"SKS"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_SKS_C.png')}
+                    <ItemListItem title={"SKS"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Thompson"} type={"Submachine Gun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Thompson_C.png')}
+                    <ItemListItem title={"Thompson"} type={"Submachine Gun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"UMP"} type={"Submachine Gun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_UMP_C.png')}
+                    <ItemListItem title={"UMP"} type={"Submachine Gun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"UZI"} type={"Submachine Gun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_UZI_C.png')}
+                    <ItemListItem title={"UZI"} type={"Submachine Gun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Vector"} type={"Submachine Gun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Vector_C.png')}
+                    <ItemListItem title={"Vector"} type={"Submachine Gun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"VSS"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_VSS_C.png')}
+                    <ItemListItem title={"VSS"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Win94"} type={"Sniper Rifle"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Win1894_C.png')}
+                    <ItemListItem title={"Win94"} type={"Sniper Rifle"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Winchester"} type={"Shotgun"} image={require('../api-assets/Assets/Item/Weapon/Main/Item_Weapon_Winchester_C.png')}
+                    <ItemListItem title={"Winchester"} type={"Shotgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"FlareGun"} type={"Handgun"} image={require('../api-assets/Assets/Item/Weapon/Handgun/Item_Weapon_FlareGun_C.png')}
+                    <ItemListItem title={"FlareGun"} type={"Handgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"G18"} type={"Handgun"} image={require('../api-assets/Assets/Item/Weapon/Handgun/Item_Weapon_G18_C.png')}
+                    <ItemListItem title={"G18"} type={"Handgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"M9"} type={"Handgun"} image={require('../api-assets/Assets/Item/Weapon/Handgun/Item_Weapon_M9_C.png')}
+                    <ItemListItem title={"M9"} type={"Handgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"M1911"} type={"Handgun"} image={require('../api-assets/Assets/Item/Weapon/Handgun/Item_Weapon_M1911_C.png')}
+                    <ItemListItem title={"M1911"} type={"Handgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"NagantM1895"} type={"Handgun"} image={require('../api-assets/Assets/Item/Weapon/Handgun/Item_Weapon_NagantM1895_C.png')}
+                    <ItemListItem title={"NagantM1895"} type={"Handgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Rhino"} type={"Handgun"} image={require('../api-assets/Assets/Item/Weapon/Handgun/Item_Weapon_Rhino_C.png')}
+                    <ItemListItem title={"Rhino"} type={"Handgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Sawnoff"} type={"Handgun"} image={require('../api-assets/Assets/Item/Weapon/Handgun/Item_Weapon_Sawnoff_C.png')}
+                    <ItemListItem title={"Sawnoff"} type={"Handgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Skorpion"} type={"Handgun"} image={require('../api-assets/Assets/Item/Weapon/Handgun/Item_Weapon_vz61Skorpion_C.png')}
+                    <ItemListItem title={"Skorpion"} type={"Handgun"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Cowbar"} type={"Melee"} image={require('../api-assets/Assets/Item/Weapon/Melee/Item_Weapon_Cowbar_C.png')}
+                    <ItemListItem title={"Cowbar"} type={"Melee"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Machete"} type={"Melee"} image={require('../api-assets/Assets/Item/Weapon/Melee/Item_Weapon_Machete_C.png')}
+                    <ItemListItem title={"Machete"} type={"Melee"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Pan"} type={"Melee"} image={require('../api-assets/Assets/Item/Weapon/Melee/Item_Weapon_Pan_C.png')}
+                    <ItemListItem title={"Pan"} type={"Melee"}
                                   filter={this.state.filterWeaponType}/>
-                    <ItemListItem title={"Sickle"} type={"Melee"} image={require('../api-assets/Assets/Item/Weapon/Melee/Item_Weapon_Sickle_C.png')}
+                    <ItemListItem title={"Sickle"} type={"Melee"}
                                   filter={this.state.filterWeaponType}/>
                 </div>
             </div>

@@ -46,19 +46,19 @@ export default class UseList extends React.Component {
                     </div>
                 </div>
                 <div className="row item-row">
-                    <ItemListItem title={"Syringe"} type={"Boost"} image={require('../api-assets/Assets/Item/Use/Boost/Item_Boost_AdrenalineSyringe_C.png')}
+                    <ItemListItem title={"Syringe"} type={"Boost"}
                                   filter={this.state.filterUseType}/>
-                    <ItemListItem title={"Energy Drink"} type={"Boost"} image={require('../api-assets/Assets/Item/Use/Boost/Item_Boost_EnergyDrink_C.png')}
+                    <ItemListItem title={"Energy Drink"} type={"Boost"}
                                   filter={this.state.filterUseType}/>
-                    <ItemListItem title={"Pain Killer"} type={"Boost"} image={require('../api-assets/Assets/Item/Use/Boost/Item_Boost_PainKiller_C.png')}
+                    <ItemListItem title={"Pain Killer"} type={"Boost"}
                                   filter={this.state.filterUseType}/>
-                    <ItemListItem title={"Jerry Can"} type={"Fuel"} image={require('../api-assets/Assets/Item/Use/Fuel/Item_JerryCan_C.png')}
+                    <ItemListItem title={"Jerry Can"} type={"Fuel"}
                                   filter={this.state.filterUseType}/>
-                    <ItemListItem title={"Jerry Can"} type={"Heal"} image={require('../api-assets/Assets/Item/Use/Heal/Item_Heal_Bandage_C.png')}
+                    <ItemListItem title={"Bandage"} type={"Heal"}
                                   filter={this.state.filterUseType}/>
-                    <ItemListItem title={"First-Aid"} type={"Heal"} image={require('../api-assets/Assets/Item/Use/Heal/Item_Heal_FirstAid_C.png')}
+                    <ItemListItem title={"First-Aid"} type={"Heal"}
                                   filter={this.state.filterUseType}/>
-                    <ItemListItem title={"Med-Kit"} type={"Heal"} image={require('../api-assets/Assets/Item/Use/Heal/Item_Heal_MedKit_C.png')}
+                    <ItemListItem title={"Med-Kit"} type={"Heal"}
                                   filter={this.state.filterUseType}/>
                 </div>
             </div>

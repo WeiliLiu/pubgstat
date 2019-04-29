@@ -1,0 +1,33 @@
+.home-post-1 {
+    background-color: white;
+    border: solid 0.5px #ced4da;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.homepost-userinfo-container {
+    /*background-color: red;*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.homepost-avatar-container img{
+    height: 2.5rem;
+    width: 2.5rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.homepost-username {
+    line-height: 2.5rem;
+    font-size: 0.95rem;
+    margin: 0;
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .home-post-1 {
+        /*width: 100%;*/
+    }
+}

@@ -28,7 +28,6 @@ export default class Player extends React.Component {
     }
 
     componentDidMount() {
-        console.log("player.js component is mounted")
         api.getPlayers({ names: [this.props.location.state.playerID] })
             .then(response => {
                 let playerData = response[0]

@@ -1,14 +1,16 @@
 .thread-list {
-    /*background-color: white;*/
     padding: 1rem;
+    justify-content: center;
 }
 
 .thread-container {
-    /*background-color: white;*/
-    /*min-height: 100%;*/
-    /*width: 100%;*/
-    /*z-index: 0;*/
-    /*position: absolute;*/
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thread-inner-container {
+    width: 1000px;
 }
 
 .thread-header-content img {
@@ -19,16 +21,15 @@
     padding: 4rem 1rem 1rem 1rem;
 }
 
-@media (min-width: 1500px) {
-    .thread-container {
-        padding-left: 15rem;
-        padding-right: 15rem;
+@media(max-width: 1032px) {
+    .thread-inner-container {
+        width: 100%;
     }
 }
 
-@media (min-width: 1700px) {
+@media (max-width: 768px) {
     .thread-container {
-        padding-left: 25rem;
-        padding-right: 25rem;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

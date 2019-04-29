@@ -1,0 +1,10 @@
+.home-post-editor-container {
+    background-color: white;
+    padding: 2rem;
+    border: solid 0.5px #ced4da;
+    margin-bottom: 1rem;
+}
+
+.home-post-title-editor {
+    height: 2.5rem!important;
+}

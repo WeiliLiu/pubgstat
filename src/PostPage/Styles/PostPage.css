@@ -1,0 +1,24 @@
+.post-page-outer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-page-inner-container{
+    /*background-color: red;*/
+    padding: 2rem;
+    width: 1000px;
+}
+
+@media(max-width: 1032px) {
+    .post-page-inner-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-page-inner-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

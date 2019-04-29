@@ -10,8 +10,6 @@ export default class ItemListItem extends React.Component {
     }
 
     decideShow() {
-        console.log(this.props.type)
-        console.log(this.props.filter)
         if (this.props.filter === 'All' || this.props.filter === this.props.type) {
             return "col-6 col-md-2 item-card-container";
         } else {
@@ -23,12 +21,10 @@ export default class ItemListItem extends React.Component {
         return(
             <div className={this.decideShow()}>
                 <div className={"card item-card shadow-sm"}>
-                    <img className="card-img-top item-img" src={this.props.image}></img>
+                    <img className="card-img-top item-img" src={require('../Images/' + this.props.title + '.png')}></img>
                     <div className="card-body item-body">
                         <Link to={{
                             pathname: `/item/${this.props.title.split(' ').join('_')}`,
-                            state: { itemID: this.props.title,
-                                     img: this.props.image}
                         }}><h6 className="card-title item-title">{this.props.title}</h6></Link>
                         <p className="card-subtitle">{this.props.type}</p>
                     </div>
