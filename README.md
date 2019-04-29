@@ -15,3 +15,11 @@ Clone the project repositories to your local machine and in the terinal, cd into
 ```
 npm install
 ```
+
+This will install all the dependencies for running the project, after the installation has finished, run the command 
+
+```
+npm start
+```
+
+this will start the project on localhost
