@@ -19,14 +19,6 @@ export default class Home extends React.Component {
         this.changeRedirect = this.changeRedirect.bind(this);
     }
 
-    // componentWillReceiveProps(nextProps, nextContext) {
-    //     console.log('nextProps');
-    //     console.log(nextProps);
-    //     if (nextProps.location.state.reload === 'desiredState') {
-    //         window.location.reload()
-    //     }
-    // }
-
     // This function is responsible for listening to search bar
     // text change
     handleSearchBarTextChange(e) {
@@ -55,19 +47,24 @@ export default class Home extends React.Component {
                 {/* Start of the main home page */}
                 <NavigationBar isHome={true}/>
                 <div className="landing">
-                    <div className="home-wrap">
-                        <div className="home-inner">
+                    <div className="caption text-center">
+                        <div className="caption-container">
+                            <h1>Get detailed information on PUBG</h1>
+                            <div className="search-bar-container">
+                                <div className="input-group mb-3 main-search-bar shadow-sm">
+                                    <input type="text" className="form-control" placeholder="Enter Username"
+                                           aria-label="Enter Username" aria-describedby="basic-addon2"
+                                           onChange={this.handleSearchBarTextChange} value={this.state.searchBarValue}/>
+                                    <div className="input-group-append">
+                                        <button className="btn btn-outline-secondary home-search-button" type="button"
+                                                onClick={this.changeRedirect}>Search</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="search-bar-container">
-                        <div className="input-group mb-3 main-search-bar shadow-sm">
-                            <input type="text" className="form-control" placeholder="Enter Username"
-                                   aria-label="Enter Username" aria-describedby="basic-addon2"
-                                    onChange={this.handleSearchBarTextChange} value={this.state.searchBarValue}/>
-                            <div className="input-group-append">
-                                <button className="btn btn-outline-secondary home-search-button" type="button"
-                                        onClick={this.changeRedirect}>Search</button>
-                            </div>
+                    <div className="home-wrap">
+                        <div className="home-inner">
                         </div>
                     </div>
                 </div>
