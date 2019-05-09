@@ -3,7 +3,7 @@ import '../Styles/UserPostList.css';
 import HomePostsEditor from '../Components/HomePostsEditor';
 import fire from '../../Utility/Components/FirebaseSetup';
 import HomePost from '../Components/HomePost';
-import * as SVGLoaders from "svg-loaders-react";
+import ReactLoading from 'react-loading';
 
 export default class UserPostsList extends React.Component {
     constructor(props) {
@@ -13,6 +13,7 @@ export default class UserPostsList extends React.Component {
             posts: [],
             userIDs: [],
             timeStamps: [],
+            postIDs: [],
             userNames: {},
             userAvatars: {},
             loading: false
@@ -30,14 +31,27 @@ export default class UserPostsList extends React.Component {
         })
         let path = 'homeposts';
         let postRef = fire.database().ref(path).orderByChild('timeStamp').limitToLast(100);
+
+        postRef.on('value', snapshot => {
+            console.log("snapshot")
+            console.log(snapshot.val() === null)
+            if(snapshot.val() === null) {
+                this.setState({
+                    loading: false
+                })
+            }
+        })
+
         postRef.on('child_added', snapshot => {
             let post = { text: snapshot.val(), id: snapshot.key };
             let temp_post = this.state.posts;
             let temp_ID = this.state.userIDs;
             let temp_timestamp = this.state.timeStamps;
+            let temp_postID = this.state.postIDs;
             temp_ID.unshift(post.text.ownerID);
             temp_timestamp.unshift(post.text.timeStamp);
             temp_post.unshift(post);
+            temp_postID.unshift(post.id);
             this.fetchUserInfo(post.text.ownerID, post.text.timeStamp);
             this.setState({
                 posts: temp_post,
@@ -66,34 +80,43 @@ export default class UserPostsList extends React.Component {
     // This function is responsible for adding a new post to the database
     addPost(newPost) {
         if(newPost.title !== '') {
-            var postRef = fire.database().ref().child("homeposts");
-            var title = newPost.title.split('.').join('')
-            title = title.split('?').join('')
-            title = title.split('#').join('')
-            title = title.split('[').join('')
-            title = title.split(']').join('')
-            title = title.split(',').join('')
-            title = title.split(' ').join('_')
-            postRef.child(title).set({
+            let path = 'homeposts/';
+            fire.database().ref(path).push({
                 title: newPost.title,
                 body: newPost.body,
                 ownerID: newPost.ownerID,
                 timeStamp: new Date().getTime()
             });
+
+            // var postRef = fire.database().ref().child("homeposts");
+            // var title = newPost.title.split('.').join('')
+            // title = title.split('?').join('')
+            // title = title.split('#').join('')
+            // title = title.split('[').join('')
+            // title = title.split(']').join('')
+            // title = title.split(',').join('')
+            // title = title.split(' ').join('_')
+            // postRef.set({
+            //     title: newPost.title,
+            //     body: newPost.body,
+            //     ownerID: newPost.ownerID,
+            //     timeStamp: new Date().getTime()
+            // });
         }
     }
 
     displayPosts() {
         if(this.state.loading === true) {
             return <div className="svg-container">
-                <SVGLoaders.ThreeDots className={"loader"} fill={'black'} width={'35'}/>
+                <ReactLoading type={'spinningBubbles'} color={'black'} height={'auto'} width={35} />
             </div>
         }else {
             var list = [];
             var list_length = Object.keys(this.state.posts).length;
             for(let i = 0; i < list_length; i++) {
                 list.push(<HomePost key={i} post={this.state.posts[i]} userName={this.state.userNames[this.state.timeStamps[i]]}
-                                    userAvatar={this.state.userAvatars[this.state.timeStamps[i]]}/>)
+                                    userAvatar={this.state.userAvatars[this.state.timeStamps[i]]}
+                                    postID={this.state.postIDs[i]} />)
             }
             return list;
         }

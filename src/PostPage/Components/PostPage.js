@@ -4,7 +4,8 @@ import NavigationBar from '../../Home/Components/NavigationBar';
 import fire from "../../Utility/Components/FirebaseSetup";
 import ReactHtmlParser from 'react-html-parser';
 import ThreadDisplay from '../../ThreadDisplay/Component/ThreadDisplay';
-import * as SVGLoaders from 'svg-loaders-react';
+import ReactLoading from "react-loading";
+import { animateScroll } from "react-scroll";
 
 export default class PostPage extends React.Component {
     constructor(props) {
@@ -13,11 +14,15 @@ export default class PostPage extends React.Component {
         this.state = {
             postTitle: '',
             postBody: '',
+            ownerAvatar: '',
+            ownerName: '',
             loading: false
         }
 
         this.componentDidMount = this.componentDidMount.bind(this);
         this.displayPostContent = this.displayPostContent.bind(this);
+        this.scrollToBottom = this.scrollToBottom.bind(this);
+        this.fetchUserInfo = this.fetchUserInfo.bind(this);
     }
 
     componentDidMount() {
@@ -29,9 +34,6 @@ export default class PostPage extends React.Component {
         let postRef = fire.database().ref(path).orderByKey().limitToLast(100);
         postRef.on('child_added', snapshot => {
             let post = { text: snapshot.val(), id: snapshot.key };
-            // console.log("post");
-            // console.log(post.id)
-            // console.log(post)
             if(post.id === 'title') {
                 this.setState({
                     postTitle: post.text,
@@ -42,19 +44,49 @@ export default class PostPage extends React.Component {
                     postBody: post.text,
                     loading: false
                 })
+            }else if(post.id === 'ownerID') {
+                this.fetchUserInfo(post.text);
             }
         })
+    }
+
+    fetchUserInfo = (userID) => {
+        let path = 'users/' + userID;
+        let userRef = fire.database().ref(path).orderByKey();
+        userRef.once('value', snapshot => {
+            console.log("userinfo")
+            console.log(snapshot.val())
+            this.setState({
+                ownerAvatar: snapshot.val().avatar,
+                ownerName: snapshot.val().username
+            })
+        })
+    }
+
+    scrollToBottom = (e) => {
+        animateScroll.scrollToBottom();
     }
 
     displayPostContent() {
         if(this.state.loading === true) {
             return <div className="svg-container">
-                <SVGLoaders.ThreeDots className={"loader"} fill={'black'} width={'35'}/>
+                <ReactLoading type={'spinningBubbles'} color={'black'} height={'auto'} width={35} />
             </div>
         }else {
-            return <div>
-                <h3>{this.state.postTitle}</h3>
-                {ReactHtmlParser(this.state.postBody)}
+            return <div className={"card post-page-card"}>
+                <h3 className={"card-title post-page-card-title"}>{this.state.postTitle}</h3>
+                <div className="post-page-userinfo-container row">
+                    <div className="post-page-avatar-container">
+                        <img src={this.state.ownerAvatar}/>
+                    </div>
+                    <p className="post-page-username">{this.state.ownerName}</p>
+                </div>
+                <div className={"card-body post-page-card-body"}>
+                    {ReactHtmlParser(this.state.postBody)}
+                    <button className="card-link btn btn-link post-page-card-link" onClick={this.scrollToBottom}><i className="fas fa-reply"></i> reply</button>
+                    <a className="card-link"><i className="far fa-thumbs-up"></i> 0</a>
+                    <a className="card-link"><i className="far fa-thumbs-down"></i> 0</a>
+                </div>
             </div>
         }
     }
@@ -70,7 +102,6 @@ export default class PostPage extends React.Component {
     render() {
         return(
             <div className="post-page-container">
-                {console.log("how many times here")}
                 <NavigationBar />
                 <div className="post-page-outer-container">
                     <div className="post-page-inner-container">

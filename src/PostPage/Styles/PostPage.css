@@ -10,6 +10,45 @@
     width: 1000px;
 }
 
+.post-page-card {
+    border: 0;
+    padding: 0;
+}
+
+.post-page-card-title {
+    color: black;
+    padding: 0;
+}
+
+.post-page-card-body {
+    padding: 0;
+}
+
+.post-page-userinfo-container {
+    /*background-color: red;*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.post-page-avatar-container img{
+    height: 2.5rem;
+    width: 2.5rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.post-page-username {
+    line-height: 2.5rem;
+    font-size: 0.95rem;
+    margin: 0;
+    margin-left: 1rem;
+}
+
+.post-page-card-link {
+    padding: 0;
+}
+
 @media(max-width: 1032px) {
     .post-page-inner-container {
         width: 100%;

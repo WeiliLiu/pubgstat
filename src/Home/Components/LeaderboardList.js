@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Styles/LeaderboardList.css';
 import axios from "axios";
-import * as SVGLoaders from "svg-loaders-react";
+import ReactLoading from 'react-loading';
 
 export default class LeaderboardList extends React.Component {
     constructor(props) {
@@ -49,9 +49,6 @@ export default class LeaderboardList extends React.Component {
                             temp_players_rankPoints.push(data[i].attributes.stats.rankPoints);
                         }
                     }
-                    // console.log(temp_players);
-                    // console.log(temp_players_rank);
-                    // console.log(temp_players_rankPoints);
                     this.setState({
                         players: temp_players,
                         playersRank: temp_players_rank,
@@ -135,7 +132,7 @@ export default class LeaderboardList extends React.Component {
     showLoading() {
         if(this.state.loading === true) {
             return <div className="svg-container">
-                <SVGLoaders.ThreeDots className={"loader"} fill={'black'} width={'35'}/>
+                <ReactLoading type={'spinningBubbles'} color={'black'} height={'auto'} width={35} />
             </div>
         }
     }

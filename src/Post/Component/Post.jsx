@@ -1,7 +1,6 @@
 import React from "react";
 import '../Styles/Post.css'
 import ReactHtmlParser from 'react-html-parser';
-import fire from "../../Utility/Components/FirebaseSetup";
 
 export default class Post extends React.Component {
     constructor(props) {

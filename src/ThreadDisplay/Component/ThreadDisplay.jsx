@@ -3,7 +3,7 @@ import Post from '../../Post/Component/Post';
 import PostEditor from '../../PostEditor/Component/PostEditor';
 import fire from '../../Utility/Components/FirebaseSetup';
 import '../Styles/ThreadDisplay.css';
-import * as SVGLoaders from 'svg-loaders-react';
+import ReactLoading from 'react-loading';
 
 class ThreadDisplay extends React.Component {
     constructor(props){
@@ -64,8 +64,6 @@ class ThreadDisplay extends React.Component {
     }
 
     fetchUserInfo = (userID, key) => {
-        console.log('fetchUsername')
-        console.log(userID)
         let path = 'users/' + userID;
         let userRef = fire.database().ref(path).orderByKey();
         userRef.once('value', snapshot => {
@@ -88,7 +86,7 @@ class ThreadDisplay extends React.Component {
     displayPosts() {
         if(this.state.loading === true) {
             return <div className="post-svg-container">
-                <SVGLoaders.ThreeDots className={"loader"} fill={'black'} width={'35'}/>
+                <ReactLoading type={'spinningBubbles'} color={'black'} height={'auto'} width={35} />
             </div>
         }
 
