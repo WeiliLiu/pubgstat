@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Styles/LeaderboardList.css';
 import axios from "axios";
+import * as SVGLoaders from "svg-loaders-react";
 
 export default class LeaderboardList extends React.Component {
     constructor(props) {
@@ -9,16 +10,21 @@ export default class LeaderboardList extends React.Component {
         this.state = {
             players: '',
             playersRank: '',
-            playersRankPoints: ''
+            playersRankPoints: '',
+            loading: false
         }
 
         this.componentDidMount = this.componentDidMount.bind(this);
         this.fillTable = this.fillTable.bind(this);
         this.sortLeaderBoard = this.sortLeaderBoard.bind(this);
         this.apiCall = this.apiCall.bind(this);
+        this.showLoading = this.showLoading.bind(this);
     }
 
     apiCall(gameMode) {
+        this.setState({
+            loading: true
+        })
         let validateStatus = status => {
             return status == 200 || status == 401 || status == 404 || status == 415 || status == 429 || status == 400
         }
@@ -50,7 +56,8 @@ export default class LeaderboardList extends React.Component {
                         players: temp_players,
                         playersRank: temp_players_rank,
                         playersRankPoints: temp_players_rankPoints,
-                        length: data_length
+                        length: data_length,
+                        loading: false
                     });
                 })
                 .catch(error => {
@@ -82,7 +89,8 @@ export default class LeaderboardList extends React.Component {
                     players: temp_players,
                     playersRank: temp_players_rank,
                     playersRankPoints: temp_players_rankPoints,
-                    length: data_length
+                    length: data_length,
+                    loading: false
                 });
             })
             .catch(error => {
@@ -108,34 +116,47 @@ export default class LeaderboardList extends React.Component {
     }
 
     fillTable() {
-        var tableBody = []
-        var sorted_data = this.sortLeaderBoard();
-        for(let i = 0; i < Object.keys(this.state.players).length; i++) {
-            tableBody.push(
-                <tr key={i}>
-                    <th scope="row">{sorted_data[i]['rank']}</th>
-                    <td>{sorted_data[i]['name']}</td>
-                    <td>{sorted_data[i]['rankPoints']}</td>
-                </tr>
-            )
+        if(this.state.loading === false) {
+            var tableBody = []
+            var sorted_data = this.sortLeaderBoard();
+            for(let i = 0; i < Object.keys(this.state.players).length; i++) {
+                tableBody.push(
+                    <tr key={i}>
+                        <th scope="row">{sorted_data[i]['rank']}</th>
+                        <td>{sorted_data[i]['name']}</td>
+                        <td>{sorted_data[i]['rankPoints']}</td>
+                    </tr>
+                )
+            }
+            return tableBody;
         }
-        return tableBody;
+    }
+
+    showLoading() {
+        if(this.state.loading === true) {
+            return <div className="svg-container">
+                <SVGLoaders.ThreeDots className={"loader"} fill={'black'} width={'35'}/>
+            </div>
+        }
     }
 
     render() {
         return(
-            <table className="table table-striped leaderboard-table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">RP</th>
-                </tr>
-                </thead>
-                <tbody>
-                {this.fillTable()}
-                </tbody>
-            </table>
+            <div>
+                <table className="table table-striped leaderboard-table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">RP</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {this.fillTable()}
+                    </tbody>
+                </table>
+                {this.showLoading()}
+            </div>
         )
     }
 }

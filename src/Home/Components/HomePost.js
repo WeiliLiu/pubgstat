@@ -9,6 +9,7 @@ export default class HomePost extends React.Component {
             <div className="home-post-1">
                 <Link to={{
                     pathname: `/posts/${this.props.post.id.split(' ').join('_')}`,
+                    state: { reload: 'desiredState' }
                 }}><h4>{this.props.post.text.title}</h4></Link>
                 <div className="homepost-userinfo-container row">
                     <div className="homepost-avatar-container">

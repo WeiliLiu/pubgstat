@@ -4,6 +4,7 @@ import NavigationBar from '../../Home/Components/NavigationBar';
 import fire from "../../Utility/Components/FirebaseSetup";
 import ReactHtmlParser from 'react-html-parser';
 import ThreadDisplay from '../../ThreadDisplay/Component/ThreadDisplay';
+import * as SVGLoaders from 'svg-loaders-react';
 
 export default class PostPage extends React.Component {
     constructor(props) {
@@ -11,13 +12,19 @@ export default class PostPage extends React.Component {
 
         this.state = {
             postTitle: '',
-            postBody: ''
+            postBody: '',
+            loading: false
         }
 
         this.componentDidMount = this.componentDidMount.bind(this);
+        this.displayPostContent = this.displayPostContent.bind(this);
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
+        this.setState({
+            loading: true
+        })
         let path = 'homeposts/' + this.props.match.params.id;
         let postRef = fire.database().ref(path).orderByKey().limitToLast(100);
         postRef.on('child_added', snapshot => {
@@ -27,14 +34,37 @@ export default class PostPage extends React.Component {
             // console.log(post)
             if(post.id === 'title') {
                 this.setState({
-                    postTitle: post.text
+                    postTitle: post.text,
+                    loading: false
                 })
             }else if(post.id === 'body') {
                 this.setState({
-                    postBody: post.text
+                    postBody: post.text,
+                    loading: false
                 })
             }
         })
+    }
+
+    displayPostContent() {
+        if(this.state.loading === true) {
+            return <div className="svg-container">
+                <SVGLoaders.ThreeDots className={"loader"} fill={'black'} width={'35'}/>
+            </div>
+        }else {
+            return <div>
+                <h3>{this.state.postTitle}</h3>
+                {ReactHtmlParser(this.state.postBody)}
+            </div>
+        }
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        console.log('reload')
+        console.log(nextProps.location.state.reload)
+        if (nextProps.location.state.reload === 'desiredState') {
+            window.location.reload()
+        }
     }
 
     render() {
@@ -44,8 +74,7 @@ export default class PostPage extends React.Component {
                 <NavigationBar />
                 <div className="post-page-outer-container">
                     <div className="post-page-inner-container">
-                        <h3>{this.state.postTitle}</h3>
-                        {ReactHtmlParser(this.state.postBody)}
+                        {this.displayPostContent()}
                         <hr />
                         <ThreadDisplay link={this.props.match.params.id}/>
                     </div>

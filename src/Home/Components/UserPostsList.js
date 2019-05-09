@@ -3,6 +3,7 @@ import '../Styles/UserPostList.css';
 import HomePostsEditor from '../Components/HomePostsEditor';
 import fire from '../../Utility/Components/FirebaseSetup';
 import HomePost from '../Components/HomePost';
+import * as SVGLoaders from "svg-loaders-react";
 
 export default class UserPostsList extends React.Component {
     constructor(props) {
@@ -13,7 +14,8 @@ export default class UserPostsList extends React.Component {
             userIDs: [],
             timeStamps: [],
             userNames: {},
-            userAvatars: {}
+            userAvatars: {},
+            loading: false
         }
 
         this.addPost = this.addPost.bind(this);
@@ -23,6 +25,9 @@ export default class UserPostsList extends React.Component {
     }
 
     componentWillMount() {
+        this.setState({
+            loading: true
+        })
         let path = 'homeposts';
         let postRef = fire.database().ref(path).orderByChild('timeStamp').limitToLast(100);
         postRef.on('child_added', snapshot => {
@@ -37,7 +42,8 @@ export default class UserPostsList extends React.Component {
             this.setState({
                 posts: temp_post,
                 userIDs: temp_ID,
-                timeStamps: temp_timestamp
+                timeStamps: temp_timestamp,
+                loading: false
             });
         })
     }
@@ -78,16 +84,23 @@ export default class UserPostsList extends React.Component {
     }
 
     displayPosts() {
-        var list = [];
-        var list_length = Object.keys(this.state.posts).length;
-        for(let i = 0; i < list_length; i++) {
-            list.push(<HomePost key={i} post={this.state.posts[i]} userName={this.state.userNames[this.state.timeStamps[i]]}
-                                userAvatar={this.state.userAvatars[this.state.timeStamps[i]]}/>)
+        if(this.state.loading === true) {
+            return <div className="svg-container">
+                <SVGLoaders.ThreeDots className={"loader"} fill={'black'} width={'35'}/>
+            </div>
+        }else {
+            var list = [];
+            var list_length = Object.keys(this.state.posts).length;
+            for(let i = 0; i < list_length; i++) {
+                list.push(<HomePost key={i} post={this.state.posts[i]} userName={this.state.userNames[this.state.timeStamps[i]]}
+                                    userAvatar={this.state.userAvatars[this.state.timeStamps[i]]}/>)
+            }
+            return list;
         }
-        return list;
     }
 
     render() {
+        {console.log('loading' + String(this.state.loading))}
         return(
             <div className="home-post-container">
                 <HomePostsEditor addPost={this.addPost} />

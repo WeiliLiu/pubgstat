@@ -17,6 +17,11 @@ export default class Home extends React.Component {
 
         this.handleSearchBarTextChange = this.handleSearchBarTextChange.bind(this);
         this.changeRedirect = this.changeRedirect.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
     }
 
     // This function is responsible for listening to search bar
