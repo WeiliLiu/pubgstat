@@ -16,7 +16,8 @@
     "react-toggle": "^4.0.2",
     "react-twitter-widgets": "^1.7.1",
     "react-with-firebase-auth": "^1.0.2",
-    "recharts": "^1.5.0"
+    "recharts": "^1.5.0",
+    "svg-loaders-react": "^0.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
